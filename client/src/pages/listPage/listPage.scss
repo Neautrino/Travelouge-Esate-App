@@ -1,17 +1,43 @@
-.listPage{
-    display: flex;
+.listPage {
+  display: flex;
+  height: 100%;
+
+  .listContainer {
+    flex: 3;
     height: 100%;
 
-    .listContainer{
-        flex: 3;
+    .wrapper {
+      height: 100vh;
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      overflow-y: scroll;
+      padding-bottom: 150px;
 
-        .wrapper{
-            padding-right: 50px;
-        }
-    }
+      &::-webkit-scrollbar {
 
-    .mapContainer{
-        flex: 2;
-        background-color: #fcf5f3;
+        width: 5px;
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #999;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover,
+      ::-webkit-scrollbar-thumb:active  {
+        background: #777;
+
+        opacity: 1;
+      }
     }
+  }
+
+  .mapContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+  }
 }
