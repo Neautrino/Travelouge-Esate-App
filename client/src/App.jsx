@@ -3,6 +3,7 @@ import {
   ListPage,
   Layout,
   SinglePage,
+  ProfilePage,
 } from "./pages/index.js"
 
 import {
@@ -27,6 +28,9 @@ function App() {
         },{
           path: "/:id",
           element: <SinglePage />
+        },{
+          path: "/profile",
+          element: <ProfilePage />
         }
       ]
     }
