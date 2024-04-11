@@ -7,41 +7,66 @@ function Filter() {
         Search results for <b>London</b>
       </h1>
       <div className="top">
-        <InputBox id="city" text="Location" placeholder="City Location" type="text" />
+        <div className="item">
+          <label htmlFor="city">Location</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            placeholder="City Location"
+          />
+        </div>
       </div>
       <div className="bottom">
-        <SelectBox id="type" options={["buy", "rent"]} />
-        <SelectBox id="property" options={["apartment", "house", "condo", "land"]} />
-        <InputBox id="minPrice" text="Min Price" type="number" />
-        <InputBox id="maxPrice" text="Max Price" type="text" />
-        <InputBox id="bedroom" text="Bedroom" type="text" />
+        <div className="item">
+          <label htmlFor="type">Type</label>
+          <select name="type" id="type">
+            <option value="">any</option>
+            <option value="buy">Buy</option>
+            <option value="rent">Rent</option>
+          </select>
+        </div>
+        <div className="item">
+          <label htmlFor="property">Property</label>
+          <select name="property" id="property">
+            <option value="">any</option>
+            <option value="apartment">Apartment</option>
+            <option value="house">House</option>
+            <option value="condo">Condo</option>
+            <option value="land">Land</option>
+          </select>
+        </div>
+        <div className="item">
+          <label htmlFor="minPrice">Min Price</label>
+          <input
+            type="number"
+            id="minPrice"
+            name="minPrice"
+            placeholder="any"
+          />
+        </div>
+        <div className="item">
+          <label htmlFor="maxPrice">Max Price</label>
+          <input
+            type="text"
+            id="maxPrice"
+            name="maxPrice"
+            placeholder="any"
+          />
+        </div>
+        <div className="item">
+          <label htmlFor="bedroom">Bedroom</label>
+          <input
+            type="text"
+            id="bedroom"
+            name="bedroom"
+            placeholder="any"
+          />
+        </div>
         <button>
           <img src="/search.png" alt="" />
         </button>
       </div>
-    </div>
-  );
-}
-
-function SelectBox({id, options}) {
-  return (
-    <div className="item">
-      <label htmlFor={id}>{id}</label>
-      <select name={id} id={id}>
-        <option value="">any</option>
-        {options.map((opt)=>(
-          <option key={opt} value={opt}>{opt}</option>
-        ))}
-      </select>
-    </div>
-  );
-}
-
-function InputBox({ id, text, placeholder = "any", type }) {
-  return (
-    <div className="item">
-      <label htmlFor={id}>{text}</label>
-      <input type={type} id={id} name={id} placeholder={placeholder} />
     </div>
   );
 }
